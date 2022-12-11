@@ -1,4 +1,4 @@
-# made with potion#0001
+# made with eboyfriend
 #--------------------------------------------------------------------------------------------------
 import discord, json, os, time, random
 from discord.ext import commands
@@ -29,7 +29,7 @@ client = commands.Bot(
 @client.event
 async def on_ready():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print('Logged in as: {}\n> potion#0001 made this\n'.format(client.user))
+    print('Logged in as: {}\n> @eboyfriend github for more\n'.format(client.user))
 
 
 @client.event
@@ -42,7 +42,7 @@ async def on_message(message):
         if word in message.content.lower() and filterWords:
             time.sleep(3.5)
             try:
-                return await message.edit(content="[>]  smoke  [<]", delete_after=3)
+                return await message.edit(content="[>]  blade  [<]", delete_after=3)
             except: pass
     
     await client.process_commands(message)
@@ -86,20 +86,20 @@ async def settings(ctx, setting="None"):
     global filterWords, filterImages, logMessages
 
     validTXT = """```ini
-[  smoke  ]
+[  blade  ]
 
 Command parsed successfully!
 Successfully toggled: {} {}
     
-[ Made by: potion#0001 ]```"""
+[ Made by: eboyfriend ]```"""
 
     invalidTXT = """```ini
-[  smoke  ]
+[  blade  ]
 
 Invalid option parsed
 Valid options are: \"filter\", \"images\", \"messages\"
 
-[ Made by: potion#0001 ]```"""
+[ Made by: eboyfriend ]```"""
 
     if setting.lower() == "filter":
         if filterWords:
@@ -119,12 +119,12 @@ Valid options are: \"filter\", \"images\", \"messages\"
 async def snipe(ctx):
     try:
         await ctx.message.edit(content="""```ini
-[ smoke ]
+[ blade ]
 [ Message sent by: {} in: {}]
 
 Message content: {}
 
-[ Made by: potion#0001 ]```""".format(snipe_message_author[ctx.channel.id], f"#{ctx.channel.name}", snipe_message_content[ctx.channel.id]), delete_after=5)
+[ Made by: eboyfriend ]```""".format(snipe_message_author[ctx.channel.id], f"#{ctx.channel.name}", snipe_message_content[ctx.channel.id]), delete_after=5)
     except KeyError:
         await ctx.send(f"There are no recently deleted messages in #{ctx.channel.name}", delete_after=10)
 
@@ -137,12 +137,12 @@ async def stream(ctx, *, message):
     await client.change_presence(activity=stream)
     print("[#] [ACTION]: Set streaming status in channel: \"{}\".".format(ctx.channel.name))
     await ctx.message.edit(content="""```ini
-[  smoke ]
+[  blade ]
     
 set stream status to: {}
 check your status!
 
-[ Made by: potion#0001 ]```""".format(message), delete_after=5)
+[ Made by: eboyfriend ]```""".format(message), delete_after=5)
 
 @client.command(aliases=['create', 'geninvite'])
 async def createinvite(ctx, guildid: int):
@@ -158,10 +158,10 @@ async def createinvite(ctx, guildid: int):
         await ctx.send("check console")
         print(e)
 
-@client.command(aliases=['clean', 'delete', 'sura', 'jordan'])
+@client.command(aliases=['clean', 'delete', 'purge'])
 async def purge(ctx, amount: int):
-    if amount > 250:
-        return await ctx.reply("dumbass, dont delete more than 250.", delete_after=3)
+    if amount > 2000:
+        return await ctx.reply("dumbass, dont delete more than 2000.", delete_after=3)
     
     await ctx.message.delete()
     
@@ -186,19 +186,19 @@ async def purge(ctx, amount: int):
         
     print("[#] [ACTION]: Finished deleting in channel: \"{}\".".format(ctx.channel.name))
     await ctx.send("""```ini
-[  smoke ]
+[  blade ]
 
 Successfully deleted {} messages.
 Slept: {} times.
 
 You were ratelimited: {} times.
 
-[ Made by: potion#0001 ]```""".format(deleted, slept, ratelimited), delete_after=5)
+[ Made by: eboyfriend ]```""".format(deleted, slept, ratelimited), delete_after=5)
 
 @client.command()
 async def ping(ctx):
     await ctx.message.delete()
-    await ctx.send(f'```ini\n[  smoke  ]\n\nClient ms is: {round(client.latency * 1000)}ms \n\n[ Made By: potion#0001 ]\n```', delete_after=3)
+    await ctx.send(f'```ini\n[  blade  ]\n\nClient ms is: {round(client.latency * 1000)}ms \n\n[ Made By: eboyfriend ]\n```', delete_after=3)
 
 @client.command()
 async def hi(ctx):
