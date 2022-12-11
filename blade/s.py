@@ -29,7 +29,7 @@ client = commands.Bot(
 @client.event
 async def on_ready():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print('Logged in as: {}\n> @eboyfriend github for more\n'.format(client.user))
+    print('Logged in as: {}\n> eboyfriend github for more\n'.format(client.user))
 
 
 @client.event
@@ -158,7 +158,7 @@ async def createinvite(ctx, guildid: int):
         await ctx.send("check console")
         print(e)
 
-@client.command(aliases=['clean', 'delete', 'purge'])
+@client.command(aliases=['clean', 'delete', 'remove'])
 async def purge(ctx, amount: int):
     if amount > 2000:
         return await ctx.reply("dumbass, dont delete more than 2000.", delete_after=3)
